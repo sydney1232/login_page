@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page/Animation/FadeAnimation.dart';
+import 'package:login_page/widget/PurpleGradientButton.dart';
+import 'package:login_page/widget/TextForm.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -119,32 +121,8 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       child: Column(children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(color: Colors.grey.shade100),
-                            ),
-                          ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Email or Phone number",
-                              hintStyle: TextStyle(color: Colors.grey.shade400),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Password",
-                              hintStyle: TextStyle(color: Colors.grey.shade400),
-                            ),
-                          ),
-                        ),
+                        TextForm(hintText: "Email or Phone number"),
+                        TextForm(hintText: "Password"),
                       ]),
                     ),
                   ),
@@ -153,26 +131,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   FadeAnimation(
                     0.5,
-                    Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromRGBO(143, 148, 251, 1),
-                            Color.fromRGBO(143, 148, 251, .6),
-                          ],
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                    PurpleGradientButton(
+                      text: 'Login',
                     ),
                   ),
                   SizedBox(
